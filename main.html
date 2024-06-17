@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приглашение на День рождения</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="section active" id="photo">
+            <img src="roden.jpg" alt="Приглашение">
+            <div class="text">Приглашение на День рождения</div>
+            <div class="arrow down" onclick="scrollToSection(1)">
+                <span></span>
+            </div>
+        </div>
+        <div class="section" id="text">
+            <p>Приглашаем вас на незабываемое празднование!</p>
+            <p>Дата: 01 июля 2024 года</p>
+            <p> 17:00</p>
+            <p> Усадьба Роден</p>
+            <p>Текст</p>
+            <p></p>
+            <div class="arrow down" onclick="scrollToSection(2)">
+                <span></span>
+            </div>
+            <div class="arrow up" onclick="scrollToSection(0)">
+                <span></span>
+            </div>
+        </div>
+        <div class="section" id="location">
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.640803%2C55.757571&mode=search&oid=202869143031&ol=biz&z=14.95" frameborder="1" allowfullscreen="true"></iframe>
+            </div>
+            <div class="arrow up" onclick="scrollToSection(1)">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
