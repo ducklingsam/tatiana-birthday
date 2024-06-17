@@ -57,7 +57,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 50px;
+    font-size: 65px;
     font-family: 'Shlapak Script', serif;
     /* Убрано фоновое затемнение */
     padding: 10px;
@@ -71,7 +71,7 @@ body, html {
     align-items: center;
     text-align: center;
     font-family: 'Shlapak Script', serif;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 #location {
