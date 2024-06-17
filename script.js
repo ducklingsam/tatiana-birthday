@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll(".section");
     let currentSection = 0;
+    let startY;
 
     function updateSections() {
         sections.forEach((section, index) => {
@@ -44,6 +45,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateSections();
             }
         }
+    });
+
+    // Обработка сенсорных событий
+    window.addEventListener("touchstart", function (event) {
+        startY = event.touches[0].clientY;
+    });
+
+    window.addEventListener("touchmove", function (event) {
+        if (!startY) return;
+        let currentY = event.touches[0].clientY;
+        let deltaY = startY - currentY;
+
+        if (deltaY > 50) { // Скролл вверх
+            if (currentSection < sections.length - 1) {
+                sections[currentSection].style.opacity = 0; // Уменьшаем opacity сразу
+                currentSection++;
+                updateSections();
+            }
+        } else if (deltaY < -50) { // Скролл вниз
+            if (currentSection > 0) {
+                sections[currentSection].style.opacity = 0; // Уменьшаем opacity сразу
+                currentSection--;
+                updateSections();
+            }
+        }
+        startY = null; // Сбрасываем значение
     });
 
     window.scrollToSection = scrollToSection;
