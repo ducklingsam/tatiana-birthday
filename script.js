@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentY = event.touches[0].clientY;
         let deltaY = startY - currentY;
 
-        if (deltaY > 20) { // Скролл вверх
+        if (deltaY > 5) { // Скролл вверх
             if (currentSection < sections.length - 1) {
                 sections[currentSection].style.opacity = 0; // Уменьшаем opacity сразу
                 currentSection++;
                 updateSections();
             }
-        } else if (deltaY < -20) { // Скролл вниз
+        } else if (deltaY < -5) { // Скролл вниз
             if (currentSection > 0) {
                 sections[currentSection].style.opacity = 0; // Уменьшаем opacity сразу
                 currentSection--;
